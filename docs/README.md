@@ -11,6 +11,7 @@
     - [Code of Conduct](#code-of-conduct)
     - [Languages](#languages)
     - [Licenses](#licenses)
+    - [Open Graph](#open-graph)
 
 ## Extensions
 
@@ -24,8 +25,12 @@
 
 ### Languages
 
-[`gh langs <owner> <repo>`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-langs)
+[`gh langs <owner>/<repo>`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-langs)
 
 ### Licenses
 
 [`gh license`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-license)
+
+### Open Graph
+
+[`gh og <owner>/<repo>`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-og)

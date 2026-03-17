@@ -7,20 +7,30 @@
 - [GitHub CLI Extensions](#github-cli-extensions)
   - [Table of Contents](#table-of-contents)
   - [Extensions](#extensions)
-    - [`gh coc`](#gh-coc)
-    - [`gh ignore`](#gh-ignore)
-    - [`gh license`](#gh-license)
+    - [`.gitignore`](#gitignore)
+    - [Code of Conduct](#code-of-conduct)
+    - [Languages](#languages)
+    - [Licenses](#licenses)
+    - [Open Graph](#open-graph)
 
 ## Extensions
 
-### `gh coc`
+### `.gitignore`
 
-[**CODE_OF_CONDUCT.md**](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-coc)
+[`gh ignore`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-ignore)
 
-### `gh ignore`
+### Code of Conduct
 
-[**.gitignore**](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-ignore)
+[`gh coc`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-coc)
 
-### `gh license`
+### Languages
 
-[**LICENSE**](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-license)
+[`gh langs <owner>/<repo>`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-langs)
+
+### Licenses
+
+[`gh license`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-license)
+
+### Open Graph
+
+[`gh og <owner>/<repo>`](https://github.com/hieudoanm/gh.cli/blob/master/packages/cli/bin/gh-og)
