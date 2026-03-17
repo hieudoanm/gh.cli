@@ -41,6 +41,6 @@ func main() {
 	// ------------------------
 	// Generate outputs
 	// ------------------------
-	services.GenerateOpenGraph(repo)
-	fmt.Println("✅ og.svg generated")
+	filePath := services.GenerateOpenGraph(repo)
+	fmt.Printf("✅ og.svg generated at %s\n", filePath)
 }

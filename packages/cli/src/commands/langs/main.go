@@ -49,6 +49,6 @@ func main() {
 	}
 
 	// Generate image
-	services.GenerateLanguagesBar(result, constants.Colors)
-	fmt.Println("✅ languages.png generated")
+	filePath := services.GenerateLanguagesBar(result, constants.Colors)
+	fmt.Printf("✅ languages.svg generated at %s\n", filePath)
 }

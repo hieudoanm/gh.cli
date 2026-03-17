@@ -23,9 +23,9 @@ type Repo struct {
 }
 
 // Public API
-func GenerateOpenGraph(repo Repo) {
+func GenerateOpenGraph(repo Repo) string {
 	svg := buildOpenGraphSVG(repo)
-	saveSVG("og.svg", svg)
+	return saveSVG("og.svg", svg)
 }
 
 // ------------------------

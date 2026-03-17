@@ -3,6 +3,7 @@ package services
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"sort"
 )
 
@@ -22,10 +23,10 @@ type segment struct {
 }
 
 // Public API
-func GenerateLanguagesBar(langs map[string]int, colors map[string]string) {
+func GenerateLanguagesBar(langs map[string]int, colors map[string]string) string {
 	segments := computeSegments(langs, DefaultWidth)
 	svg := buildSVG(segments, colors, DefaultWidth, DefaultHeight)
-	saveSVG("languages.svg", svg)
+	return saveSVG("languages.svg", svg)
 }
 
 // ------------------------
@@ -220,15 +221,25 @@ func formatBytes(b int) string {
 // SAVE
 // ------------------------
 
-func saveSVG(filename, content string) {
+func saveSVG(filename, content string) string {
+	// Create file
 	f, err := os.Create(filename)
 	if err != nil {
 		panic(err)
 	}
 	defer f.Close()
 
+	// Write content
 	_, err = f.WriteString(content)
 	if err != nil {
 		panic(err)
 	}
+
+	// Get absolute path
+	absPath, err := filepath.Abs(filename)
+	if err != nil {
+		panic(err)
+	}
+
+	return absPath
 }
