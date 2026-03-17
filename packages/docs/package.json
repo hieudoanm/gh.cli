@@ -1,0 +1,39 @@
+{
+  "name": "@gh.cli/docs",
+  "version": "0.0.1",
+  "private": true,
+  "description": "GitHub CLI - Documents",
+  "main": "README.md",
+  "keywords": [
+    "gh",
+    "cli"
+  ],
+  "homepage": "https://hieudoanm.github.io/gh.cli",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hieudoanm/gh.cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hieudoanm/gh.cli/issues"
+  },
+  "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",
+  "license": "GPL-3.0",
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": "25.8.1"
+  },
+  "scripts": {
+    "prebuild": "rimraf ../../docs",
+    "build": "rimraf ../../docs && docsify init ../../docs",
+    "test": "true",
+    "lint": "true",
+    "format": "prettier --cache --write .",
+    "predev": "rimraf ./docs && docsify init ./docs",
+    "dev": "docsify serve ./docs"
+  },
+  "devDependencies": {
+    "docsify-cli": "4.4.4",
+    "prettier": "3.8.1",
+    "rimraf": "6.1.3"
+  }
+}
