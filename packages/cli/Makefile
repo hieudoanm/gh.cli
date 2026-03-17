@@ -3,7 +3,8 @@ BIN_DIR := ./bin
 SRC_DIR := ./src
 EXT_DIR := $(HOME)/.local/share/gh/extensions
 
-EXTENSIONS := gh-coc gh-ignore gh-langs gh-license
+COMMANDS := coc ignore langs license og
+EXTENSIONS := gh-coc gh-ignore gh-langs gh-license gh-og
 
 # ---- Tools ----
 FMT := go fmt ./...
@@ -27,15 +28,16 @@ lint: format vet
 .PHONY: build
 build: lint
 	@mkdir -p $(BIN_DIR)
-	@for ext in $(EXTENSIONS); do \
-		echo "Building $$ext..."; \
-		go build -o $(BIN_DIR)/$$ext $(SRC_DIR)/$$ext/main.go; \
+	@for command in $(COMMANDS); do \
+		echo "Building $$command..."; \
+		go build -o $(BIN_DIR)/gh-$$command $(SRC_DIR)/commands/$$command/main.go; \
 	done
 
 # ---- Install (local dev via symlink) ----
 .PHONY: install
 install: build
-	@for ext in $(EXTENSIONS); do \
+	@for command in $(COMMANDS); do \
+		ext=gh-$$command; \
 		echo "Installing $$ext..."; \
 		EXT_PATH=$(EXT_DIR)/$$ext; \
 		rm -rf $$EXT_PATH; \
