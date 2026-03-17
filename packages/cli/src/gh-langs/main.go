@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/cli/go-gh/v2/pkg/api"
+	"github.com/hieudoanm/gh.cli/src/gh-langs/libs"
 )
 
 func main() {
@@ -31,7 +32,6 @@ func main() {
 	path := fmt.Sprintf("repos/%s/%s/languages", owner, name)
 
 	var result map[string]int
-
 	err = client.Get(path, &result)
 	if err != nil {
 		log.Fatal(err)
@@ -46,4 +46,8 @@ func main() {
 	for lang, bytes := range result {
 		fmt.Printf("- %s: %d bytes\n", lang, bytes)
 	}
+
+	// Generate image
+	libs.GenerateLanguagesBar(result, libs.Colors)
+	fmt.Println("✅ languages.png generated")
 }
